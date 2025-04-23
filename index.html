@@ -1,0 +1,45 @@
+  <!-- Crie um array com 30 palavras que serão usadas para nosso jogo da forca: as palavras são a sua escolha e não usaremos acentuação e nem letras especiais.
+Será feito um sorteio dentre uma dessas palavras para termos nossa palavra da forca. No momento que a mesma for escolhida, temos de preparar nossa aplicação, mostrando os espaços para letras conforme o tamanho da nossa palavra sorteada.-->
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jogo da Forca</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header>
+      <h1>Jogo da Forca</h1>
+    </header>
+
+    <main>
+      <form class="login-form">
+        <div class="user">
+          <label for="usuario">NickName:</label>
+          <input type="text" id="usuario" name="usuario" required />
+        </div>
+        <div>
+          <button type="submit" class="btn">Login</button>
+        </div>
+      </form>
+
+      <div class="game" style="display: none">
+        <button class="new">Novo Jogo</button>
+        <article class="content-img">
+          <img class= "img" src="/forca1.jpg" width="250px" alt="Jogo da forca" />
+        </article>
+        <article class="content">
+          <div class="guess-word"></div>
+          <div class="clue"></div>
+          <div class="btns"></div>
+          <div class="wrong-letters"></div>
+          <div class="game-message" style="display:none;"></div>
+        </article>
+      </div>
+    </main>
+
+    <script src="script.js" type="module"></script>
+  </body>
+</html>
