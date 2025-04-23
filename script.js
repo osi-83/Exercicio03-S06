@@ -31,7 +31,7 @@ let indexImg;
 
 function init() {
   indexImg = +1;
-  img.src = `./forca${indexImg}.jpg`;
+  img.src = `forca${indexImg}.jpg`;
 
   generateGuessSection();
   generateButtons();
@@ -69,7 +69,7 @@ function wrongAnswer(letter) {
   }
 
   indexImg++;
-  img.src = `./forca${indexImg}.jpg`;
+  img.src = `forca${indexImg}.jpg`;
 
   if (indexImg === 8) {
     setTimeout(() => {
