@@ -30,7 +30,7 @@ btnNew.onclick = () => init();
 let indexImg;
 
 function init() {
-  indexImg = 1;
+  indexImg = +1;
   img.src = `/forca${indexImg}.jpg`;
 
   generateGuessSection();
@@ -38,6 +38,7 @@ function init() {
 
   wrongLetters = [];
   wrongLettersContainer.textContent = "";
+  messageBox.style.display = "none";
 }
 
 function generateGuessSection() {
@@ -68,13 +69,13 @@ function wrongAnswer(letter) {
   }
 
   indexImg++;
-  img.src = `/img/forca${indexImg}.jpg`;
+  img.src = `/forca${indexImg}.jpg`;
 
   if (indexImg === 8) {
     setTimeout(() => {
-        showMessage("Perdeu :/");
-        setTimeout(() => init())
-    });
+      showMessage("Perdeu :/");
+      setTimeout(() => init(), 5000);
+    }, 100);
   }
 }
 
@@ -95,8 +96,8 @@ function verifyLetter(letter) {
 
   if (won) {
     setTimeout(() => {
-        showMessage("Ganhou!!!");
-        setTimeout(() => init());
+      showMessage("Ganhou!!!");
+      setTimeout(() => init(), 5000);
     });
   }
 }
@@ -120,10 +121,11 @@ function generateButtons() {
 }
 
 function showMessage(text) {
-    messageBox.textContent = text;
-    messageBox.style.display = "block";
-  
-    setAttribute(() => {
-      messageBox.style.display = "none";
-    }, onclick());
-  }
+  messageBox.textContent = text;
+  messageBox.style.display = "block";
+  const buttons = document.querySelectorAll(".btns button");
+  buttons.forEach(btn => btn.disabled = true);
+  setTimeout(() => {
+    messageBox.style.display = "none";
+  }, 3000);
+}
