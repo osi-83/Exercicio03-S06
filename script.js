@@ -30,7 +30,7 @@ btnNew.onclick = () => init();
 let indexImg;
 
 function init() {
-  indexImg = 1;
+  indexImg = +1;
   img.src = `./forca${indexImg}.jpg`;
 
   generateGuessSection();
