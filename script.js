@@ -69,7 +69,7 @@ function wrongAnswer(letter) {
   }
 
   indexImg++;
-  img.src = `/forca${indexImg}.jpg`;
+  img.src = `./forca${indexImg}.jpg`;
 
   if (indexImg === 8) {
     setTimeout(() => {
